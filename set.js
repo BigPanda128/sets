@@ -3,11 +3,11 @@ function Set() {
  this.add = add;
  this.remove = remove;
  this.contains = contains;
- //this.size = size;
+ this.size = size;
  this.union = union;
  this.intersect = intersect;
  //this.subset = subset;
- //this.difference = difference;
+ this.difference = difference;
  this.show = show;
 }
 
@@ -66,4 +66,32 @@ function intersect(set) {
 		}   
 	}   
 	return tempSet; 
-} 
+}
+
+/*function subset(set) {   
+	if (this.size() > set.size()) {      
+		return false;   
+	}   
+	else {      
+		for each (var member in this.dataStore) {         
+			if (!set.contains(member)) {            
+				return false;         
+			}      
+		}   
+	}   
+	return true; 
+}*/
+
+function size() {   
+	return this.dataStore.length; 
+}
+
+function difference(set) {   
+	var tempSet = new Set();   
+	for (var i = 0; i < this.dataStore.length; ++i) {      
+		if (!set.contains(this.dataStore[i])) {         
+			tempSet.add(this.dataStore[i]);      
+		}   
+	}   
+	return tempSet; 
+}
