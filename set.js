@@ -6,7 +6,7 @@ function Set() {
  this.size = size;
  this.union = union;
  this.intersect = intersect;
- //this.subset = subset;
+ this.subset = subset;
  this.difference = difference;
  this.show = show;
 }
@@ -68,19 +68,19 @@ function intersect(set) {
 	return tempSet; 
 }
 
-/*function subset(set) {   
+function subset(set) {   
 	if (this.size() > set.size()) {      
 		return false;   
 	}   
 	else {      
-		for each (var member in this.dataStore) {         
-			if (!set.contains(member)) {            
+		for /*each*/ (var i = 0; i < this.size(); i++/*var member in this.dataStore*/) {         
+			if (!set.contains(i)) {            
 				return false;         
 			}      
 		}   
 	}   
 	return true; 
-}*/
+}
 
 function size() {   
 	return this.dataStore.length; 
