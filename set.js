@@ -73,8 +73,9 @@ function subset(set) {
 		return false;   
 	}   
 	else {      
-		for /*each*/ (var i = 0; i < this.size(); i++/*var member in this.dataStore*/) {         
-			if (!set.contains(i)) {            
+		for (var i = 0; i < this.size(); i++) {
+			var member = this.dataStore[i];
+			if (!set.contains(member)) {
 				return false;         
 			}      
 		}   
