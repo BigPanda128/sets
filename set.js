@@ -5,7 +5,7 @@ function Set() {
  this.contains = contains;
  //this.size = size;
  this.union = union;
- //this.intersect = intersect;
+ this.intersect = intersect;
  //this.subset = subset;
  //this.difference = difference;
  this.show = show;
@@ -57,3 +57,13 @@ function union(set) {
    }
  return tempSet;
 }
+
+function intersect(set) {   
+	var tempSet = new Set();   
+	for (var i = 0; i < this.dataStore.length; ++i) {      
+		if (set.contains(this.dataStore[i])) {         
+			tempSet.add(this.dataStore[i]);      
+		}   
+	}   
+	return tempSet; 
+} 
